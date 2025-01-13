@@ -1,0 +1,990 @@
+.service-intro {
+  background: linear-gradient(135deg, #f6f9ff 0%, #f1f4ff 100%);
+  min-height: 100vh;
+}
+
+.service-intro main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.service-intro-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.service-intro-hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #2b4cff 0%, #0056B3 100%);
+  color: white;
+  border-radius: 30px;
+  margin: 2rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(43, 76, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: slideInDown 1s ease-out;
+  animation: fadeIn 1s ease-out;
+  background: linear-gradient(-45deg, #2b4cff, #0056B3, #1a73e8, #2b4cff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite, fadeIn 1s ease-out;
+}
+
+.service-intro-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/pattern.png') repeat;
+  opacity: 0.1;
+  animation: gradientMove 15s ease infinite;
+}
+
+.service-intro-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.service-intro-hero p {
+  font-size: 1.4rem;
+  opacity: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.service-intro-hero .cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff00 0%, #0b7ffb 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(43, 76, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-intro-hero .cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.service-intro-hero .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(43, 76, 255, 0.3);
+}
+
+.service-intro-hero .cta-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* .hero-section {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2b4cff 0%, #0056B3 100%);
+  color: white;
+  border-radius: 30px;
+  margin: 2rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(43, 76, 255, 0.2);
+} */
+
+/* .hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/pattern.png') repeat;
+  opacity: 0.1;
+} */
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.features-section {
+  margin-bottom: 6rem;
+}
+
+.features-section h2 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; /* Giảm khoảng cách giữa các card */
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1400px; /* Tăng max-width để các card có nhiều không gian hơn */
+  perspective: 1000px;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2b4cff, #0056B3);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(43, 76, 255, 0.15);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon {
+  font-size: 3rem; /* Tăng kích thước icon */
+  margin-bottom: 1.5rem;
+  color: #2b4cff;
+  background: linear-gradient(135deg, #2b4cff 0%, #0056B3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+.feature-card h3 {
+  color: #1a237e;
+  margin: 1rem 0; /* Tăng margin để có khoảng cách hơn */
+  font-size: 1.5rem; /* Tăng kích thước chữ */
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.feature-card p {
+  color: #6b7c93;
+  line-height: 1.6; /* Tăng line-height để dễ đọc hơn */
+  font-size: 1rem; /* Tăng kích thước chữ */
+  margin: 0;
+}
+
+.guide-section {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  animation: fadeInUp 0.8s ease-out;
+  transition: transform 0.5s ease;
+}
+
+.guide-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(43, 76, 255, 0.03) 0%, rgba(0, 86, 179, 0.03) 100%);
+  z-index: 0;
+}
+
+.guide-section h2 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Thay đổi thành 4 cột cố định */
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  height: auto;
+  min-height: 300px;
+  perspective: 2000px;
+  z-index: 2;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 1;
+  transform-origin: center;
+}
+
+.step:hover {
+  transform: scale(1.02);
+}
+
+.step.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  z-index: 1002;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.step.active .step-content {
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.step.active .step-image-container {
+  flex: 1;
+  max-height: none;
+  height: auto;
+  opacity: 1;
+  margin: 0;
+}
+
+.step.active .step-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  transform: none;
+}
+
+.step.active .step-number {
+  margin: 0 0 1rem 0;
+}
+
+.step.active h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1a237e;
+  text-align: left;
+}
+
+.step.active p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6b7c93;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .step.active {
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .step.active .step-content {
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .step.active .step-image-container {
+    width: 100%;
+    max-height: 50vh;
+  }
+}
+
+.step-image-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-image-container {
+  height: 400px;
+  margin-top: 2rem;
+  max-height: 600px;
+  margin-top: 1.5rem;
+}
+
+.step-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+
+.step-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.steps-wrapper {
+  position: relative;
+  min-height: 400px;
+  z-index: 1;
+}
+
+/* Hiệu ứng cho các step không active */
+.step:not(.active) {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.step.active + .step,
+.step.active ~ .step {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Hiệu ứng đóng */
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #1a237e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 1003;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+.step:nth-child(1) { animation-delay: 0.2s; }
+.step:nth-child(2) { animation-delay: 0.4s; }
+.step:nth-child(3) { animation-delay: 0.6s; }
+.step:nth-child(4) { animation-delay: 0.8s; }
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2b4cff 0%, #0056B3 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 10px 20px rgba(43, 76, 255, 0.2);
+  transition: all 0.5s ease;
+}
+
+.step h3 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.step p {
+  color: #6b7c93;
+  line-height: 1.6;
+}
+
+.start-booking-btn {
+  display: block;
+  margin: 4rem auto 0;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2b4cff 0%, #0056B3 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(43, 76, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  animation: bounceIn 1s ease-out;
+}
+
+.start-booking-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shine 3s infinite linear;
+}
+
+.start-booking-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(43, 76, 255, 0.3);
+}
+
+.start-booking-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.service-types {
+  margin: 4rem 0;
+  padding: 2rem;
+}
+
+.service-types h2 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.service-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.service-type-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(43, 76, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(43, 76, 255, 0.05) 0%, rgba(0, 86, 179, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-type-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(43, 76, 255, 0.15);
+}
+
+.service-type-card:hover::before {
+  opacity: 1;
+}
+
+.service-type-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2b4cff;
+  transition: transform 0.3s ease;
+}
+
+.service-type-card:hover .service-type-icon {
+  transform: scale(1.1);
+}
+
+.service-type-card h3 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.service-type-card p {
+  color: #6b7c93;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+
+  .feature-card {
+    min-height: 220px;
+  }
+
+  .service-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features-grid,
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .feature-card {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-intro-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .service-intro-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .service-intro-hero p {
+    font-size: 1.1rem;
+  }
+
+  .service-intro-hero .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .start-booking-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .step.active {
+    width: 95%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .features-grid {
+    transform: none;
+  }
+
+  .guide-section:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-types-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Thêm hiệu ứng hover */
+.service-intro-hero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(43, 76, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.service-intro-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: rotate(45deg) translateY(0%);
+  }
+  to {
+    transform: rotate(45deg) translateY(100%);
+  }
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .service-intro-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .service-intro-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .service-intro-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Hero Section Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Features Grid Animation */
+
+/* Step Container Animation */
+
+/* New Animations */
+@keyframes fadeInRotate {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  70% { transform: scale(0.9); }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media Queries with Animations */
+
+/* Loading Animation */
+.service-intro::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #2b4cff, #0056B3);
+  animation: loading 2s ease-out forwards;
+  z-index: 1000;
+}
+
+@keyframes loading {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.step {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.step.active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 100;
+  background: white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: expandStep 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.step:not(.active) {
+  transform-origin: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active ~ .step {
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.step-image-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-image-container {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 2rem;
+}
+
+.step-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transform: scale(0.8);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-image {
+  transform: scale(1);
+}
+
+.step-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+ 
+}
+
+.step-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #1a237e;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 101;
+  opacity: 0;
+  transform: rotate(-180deg);
+}
+
+.step.active .close-button {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+@keyframes expandStep {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Hover effects for non-active steps */
+.step:not(.active):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(43, 76, 255, 0.1);
+}
+
+.step-number {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.step:hover .step-number {
+  transform: scale(1.1);
+}

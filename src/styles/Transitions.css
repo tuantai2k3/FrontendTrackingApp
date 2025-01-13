@@ -1,0 +1,81 @@
+.page-enter {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 400ms ease-in-out;
+  }
+  
+  .page-exit {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95);
+    transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 400ms ease-in-out;
+  }
+  
+  /* Hiệu ứng cho chuyển ngược (backward) */
+  .page-backward-enter {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95) rotate(-1deg);
+  }
+  
+  .page-backward-enter-active {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0);
+    transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 400ms ease-in-out;
+  }
+  
+  .page-backward-exit {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  
+  .page-backward-exit-active {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95) rotate(1deg);
+    transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 400ms ease-in-out;
+  }
+  
+  /* Hiệu ứng fade overlay */
+  .fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+  }
+  
+  .fade-overlay.active {
+    opacity: 1;
+  }
+  
+  /* Thêm một chút bounce khi kết thúc */
+  .page-enter-active,
+  .page-backward-enter-active {
+    animation: bounce 400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
